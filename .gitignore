@@ -1,0 +1,35 @@
+# Binary files
+*.exe
+*.out
+*.app
+
+# Compiled object files
+*.o
+*.a
+*.so
+
+# Build artifacts
+/bin/
+/obj/
+/vendor/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+
+# Logs and debugging files
+*.log
+trace.out
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+
+# Go Modules and dependencies
+/go/
+pkg/
