@@ -1,0 +1,10 @@
+linters:
+  enable:
+    - staticcheck
+    - gosimple
+    - unused
+    - govet
+    - errcheck
+
+issues:
+  exclude-use-default: false

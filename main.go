@@ -19,16 +19,17 @@ func main() {
 	defer dbConn.Close()
 
 	// Setup HTTP server
-	httpMux := http.NewServeMux()
-	routes.RegisterRoutes(httpMux, dbConn)
+	// httpMux := http.NewServeMux()
+	// routes.RegisterRoutes(httpMux, dbConn)
 
+	r := routes.RegisterRoutes(dbConn)
 	serverPort := os.Getenv("PORT")
 	if serverPort == "" {
 		serverPort = "8080"
 	}
 
 	log.Println("Server running on port:", serverPort)
-	if err := http.ListenAndServe(":"+serverPort, httpMux); err != nil {
+	if err := http.ListenAndServe(":"+serverPort, r); err != nil {
 		log.Fatal("Server failed to start: ", err)
 	}
 }
